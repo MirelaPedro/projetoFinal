@@ -23,7 +23,7 @@ export default function Login() {
         <View style={styles.btn}>
           <Button title= "ENTRAR" color='#DCCAFF'/>
           <TouchableOpacity>
-              <Text style={styles.txt}>Clique para criar uma conta</Text>
+              <Text style={styles.txt}>Não tem uma conta? Clique aqui</Text>
           </TouchableOpacity>
         </View>
     </View>
