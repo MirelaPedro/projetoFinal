@@ -13,17 +13,26 @@ export default function Login({navigation}) {
         <Text style={styles.nome}> LOGIN</Text>
       </View>
       <View style={styles.usuario}>
-        <TextInput style={styles.input} placeholder='Digite seu e-mail' value={email} onChangeText={setEmail}/>
+        <TextInput style={styles.input} 
+        placeholder='Digite seu e-mail' 
+        value={email} 
+        onChangeText={setEmail}/>
       </View>
+
       <View style={styles.usuario}>
-      <TextInput style={styles.input} placeholder='Digite sua senha' value={senha} onChangeText={setSenha} secureTextEntry={true}/>
+        <TextInput style={styles.input} 
+        placeholder='Digite sua senha' 
+        value={senha} 
+        onChangeText={setSenha} 
+        secureTextEntry={true}/>
       </View>
-        <View style={styles.btn}>
-          <Button title= "ENTRAR" color='#DCCAFF' onPress={() => navigation.navigate("HomeDrawer")}/>
-          <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
-              <Text style={styles.txt}>Não tem uma conta? Clique aqui</Text>
-          </TouchableOpacity>
-        </View>
+
+      <View style={styles.btn}>
+        <Button title= "ENTRAR" color='#DCCAFF' onPress={() => navigation.navigate("HomeDrawer")}/>
+        <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
+            <Text style={styles.txt}>Não tem uma conta? Clique aqui</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
