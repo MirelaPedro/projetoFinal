@@ -29,14 +29,14 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
         <Stack.Screen name='Cadastro' component={Cadastro} options={{headerShown: false}}/>
-        <Stack.Screen name='HomeDrawer' component={homeDrawer} options={{headerShown: false}}/>
+        <Stack.Screen name='HomeDrawer' component={HomeDrawer} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
 
-function homeDrawer(){
+function HomeDrawer(){
   const Drawer = createDrawerNavigator();
 
   return(
@@ -61,7 +61,6 @@ function homeDrawer(){
       <Drawer.Screen name='Administrador' component={Administrador}
       /* options={{ tabBarIcon: () => (
       <FontAwesome5 name="user-cog" size={24} color="black" />)}} *//>
-
 
     </Drawer.Navigator>
   )
