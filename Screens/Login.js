@@ -1,9 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Image } from 'react-native';
 import { useState } from 'react';
 
 
-export default function Login() {
+export default function Login({navigation}) {
     const [senha, setSenha] = useState("");
     const [email, setEmail] = useState("");
 
@@ -11,18 +10,17 @@ export default function Login() {
     <View style={styles.container}>
       <View style={styles.nomeLoja}>
         <Text style={styles.nome}> NOME DA LOJA</Text>
+        <Text style={styles.nome}> LOGIN</Text>
       </View>
       <View style={styles.usuario}>
-        <TextInput style={styles.input} placeholder='Digite seu e-mail' value={email} onChangeText={setEmail}>
-        </TextInput>
+        <TextInput style={styles.input} placeholder='Digite seu e-mail' value={email} onChangeText={setEmail}/>
       </View>
       <View style={styles.usuario}>
-      <TextInput style={styles.input} placeholder='Digite sua senha' value={senha} onChangeText={setSenha} secureTextEntry={true}>
-      </TextInput>
+      <TextInput style={styles.input} placeholder='Digite sua senha' value={senha} onChangeText={setSenha} secureTextEntry={true}/>
       </View>
         <View style={styles.btn}>
-          <Button title= "ENTRAR" color='#DCCAFF'/>
-          <TouchableOpacity>
+          <Button title= "ENTRAR" color='#DCCAFF' onPress={() => navigation.navigate("HomeDrawer")}/>
+          <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
               <Text style={styles.txt}>Não tem uma conta? Clique aqui</Text>
           </TouchableOpacity>
         </View>

@@ -1,11 +1,11 @@
 import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
-export default function Home({navigation}){
+export default function Música({navigation}){
 
     return(
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.title}>Home</Text>
+                <Text style={styles.title}>Música</Text>
             </View>
         </ScrollView>
     )
