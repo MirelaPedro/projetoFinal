@@ -11,8 +11,8 @@ export default function Cadastro({navigation}) {
 
       {/* ***** TÍTULO ***** */}
       <View style={styles.nomeLoja}>
-        <Text style={styles.nome}> NOME DA LOJA</Text>
-        <Text style={styles.nome}> CADASTRO</Text>
+        <Text style={styles.nome}> PurpleWave</Text>
+        <Text style={styles.subTitle}>CADASTRO</Text>
       </View>
 
       {/* ***** CAMPOS ***** */}
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign: 'center',
   },
 
   usuario: {
@@ -63,21 +64,29 @@ const styles = StyleSheet.create({
     fontSize: 15,
     },
 
-/*     nomeLoja: {
-      flex: 1,
-    }, */
-
     nome: {
       justifyContent: 'center',
       flexDirection: 'row',
       fontFamily: 'Arial',
-      fontSize: 35,
+      fontSize: 50,
       fontWeight: 'bold',
-      color: '#505050',
+      color: '#846BB4',
     },
-        btn: {
-        justifyContent: 'center',
-        margin: 30
+    
+    subTitle: {
+      color: '#3E2470',
+      justifyContent: 'center',
+      flexDirection: 'row',
+      textAlign:'center',
+      fontFamily: 'Arial',
+      fontSize: 25,
+      fontWeight: 'semibold',
+      marginTop: 20,
+    },
+
+    btn: {
+      justifyContent: 'center',
+       margin: 30
     },
 
     vazio: {
