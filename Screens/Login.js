@@ -9,8 +9,8 @@ export default function Login({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.nomeLoja}>
-        <Text style={styles.nome}> NOME DA LOJA</Text>
-        <Text style={styles.nome}> LOGIN</Text>
+        <Text style={styles.nome}> PurpleWave</Text>
+        <Text style={styles.subTitle}>LOGIN</Text>
       </View>
       <View style={styles.usuario}>
         <TextInput style={styles.input} 
@@ -73,10 +73,11 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       flexDirection: 'row',
       fontFamily: 'Arial',
-      fontSize: 35,
+      fontSize: 50,
       fontWeight: 'bold',
-      color: '#505050',
+      color: '#846BB4',
     },
+
         btn: {
         justifyContent: 'center',
         margin: 30
@@ -91,5 +92,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         fontSize: 20,
         color: '#3E2470',
-    }
+    },
+
+    subTitle: {
+      color: '#3E2470',
+      justifyContent: 'center',
+      flexDirection: 'row',
+      textAlign:'center',
+      fontFamily: 'Arial',
+      fontSize: 25,
+      fontWeight: 'semibold',
+      marginTop: 20,
+    },
 });

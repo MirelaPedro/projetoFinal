@@ -10,13 +10,11 @@ music = (
 
 export default function Home({navigation}){
 
-    return(
-        <ScrollView>
-            <View style={styles.container}>
-
+    return( /* Estilização própria para o scrollview */
+        <ScrollView contentContainerStyle={styles.container}>
                 {/* ***** TÍTULOS ***** */}
-                <Text style={styles.title}>Home</Text>
-                <Text style={styles.subTitle}>Descrição rápida sobre a playlist de kpop</Text>
+                <Text style={styles.Title}>HOME</Text>
+                <Text style={styles.subTitle}>💜O mundo do K-Pop reunido aqui💜</Text>
 
                 {/* ***** MÚSICAS ***** */}
                 <FlatList
@@ -27,9 +25,6 @@ export default function Home({navigation}){
                     name={item.name}
                     autor={item.autor}
                 />)}/>
-                
-
-            </View>
         </ScrollView>
     )
 }
@@ -38,15 +33,28 @@ export default function Home({navigation}){
 const styles = StyleSheet.create({
     /* ***** VIEWs ***** */
     container: {
-        flex: 1
+        flexGrow: 1, //Faz o scrollview ocupar a tela toda
+        alignItems: 'center',
     },
 
     /* ***** TEXTs ***** */
-    title: {
-        fontSize: 32
+    Title: {
+      color: '#846BB4',
+      justifyContent: 'center',
+      flexDirection: 'row',
+      textAlign:'center',
+      fontFamily: 'Arial',
+      fontSize: 30,
+      fontWeight: 'bold',
+      marginTop: 20,
     },
 
     subTitle: {
-        fontSize: 24
+        color: '#846BB4',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        fontFamily: 'Arial',
+        fontSize: 20,
+        marginTop: 20,
     },
 })
