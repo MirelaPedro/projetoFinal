@@ -8,13 +8,14 @@ export default function Card({image, name, autor}){
             
             <View style={styles.info}>
                 <View style={styles.descripition}>
-                    <Text style={styles.text}>{name}</Text>
-                    <Text style={styles.text}>{autor}</Text>
+                    <Image style={styles.imagens} source={{uri: image}} />
+                    <Text style={styles.name}>{name}</Text>
+                    <Text style={styles.singer}>{autor}</Text>
                 </View>
             
-                <TouchableOpacity>
+{/*                 <TouchableOpacity>
                 <Image source={require('../assets/iconRemove.png')}/>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
 
         </View>
@@ -30,11 +31,12 @@ export function CardPlaylist({image, name, autor}){
             <View style={styles.descripition}>
                     <Text style={styles.text}>{name}</Text>
                     <Text style={styles.text}>{autor}</Text>
+                     {/* <Text style={styles.heart}>♡</Text> */}
             </View>
             
-            <TouchableOpacity>
+{/*             <TouchableOpacity>
                 <Image source={require('../assets/iconRemove.png')}/>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
         </View>
     )
@@ -62,7 +64,8 @@ const styles = StyleSheet.create({
     },
 
     descripition: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        backgroundColor:' #DCCAFF',
     },
 
     /* TEXTs */
@@ -70,6 +73,8 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
 
-
-
+/*     heart: {
+        fontSize: 18,
+        color: '#846BB4'
+    } */
 })
