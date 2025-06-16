@@ -4,10 +4,10 @@ import Card from "../Components/card";
 
 /* ************************* PLAYLIST PARA TEST */
 const music = [
-    {name: "TT", autor: "Twice", image: "https://i.scdn.co/image/ab67616d0000b273387444ab2fc1f08dfe7915ab"},
-    {name: "Magnetic", autor: "ILLIT", image: "https://akamai.sscdn.co/letras/360x360/albuns/4/0/c/4/2281841720031967.jpg"},
-     { name: "LALALALA", autor: "Stray Kids", image: "https://i.scdn.co/image/ab67616d00001e02294cd137cee66216c0b67b43" },
-    { name: "Moonlight", autor: "TWICE", image: "https://i.scdn.co/image/ab67616d0000b273e7c1263f9d1804a9bc38a66d" }
+    {name: "TT", autor: "Twice", image: source="https://i.pinimg.com/736x/9d/6b/8b/9d6b8b8aebcf611c4a6c3218c5c0f3fd.jpg"},
+/*     {name: "Magnetic", autor: "ILLIT", image: "https://akamai.sscdn.co/letras/360x360/albuns/4/0/c/4/2281841720031967.jpg"}, */
+/*      { name: "LALALALA", autor: "Stray Kids", image: "https://i.scdn.co/image/ab67616d00001e02294cd137cee66216c0b67b43" },
+    { name: "Moonlight", autor: "TWICE", image: "https://i.scdn.co/image/ab67616d0000b273e7c1263f9d1804a9bc38a66d" } */
 ];
 
 export default function Home({navigation}){
@@ -35,7 +35,7 @@ export default function Home({navigation}){
 const styles = StyleSheet.create({
     /* ***** VIEWs ***** */
     container: {
-        flexGrow: 1, //Faz o scrollview ocupar a tela toda
+        flex: 1,
         alignItems: 'center',
     },
 
