@@ -3,15 +3,18 @@ import Card from "../Components/card";
 
 
 /* ************************* PLAYLIST PARA TEST */
-music = (
-    {name: "TT", autor: "Twice", image: "https://i.scdn.co/image/ab67616d0000b273387444ab2fc1f08dfe7915ab"},
-    {name: "Magnetic", autor: "ILLIT", image: "https://akamai.sscdn.co/letras/360x360/albuns/4/0/c/4/2281841720031967.jpg"}
-);
+const music = [
+    {name: "TT", autor: "TWICE", image: source="https://i.pinimg.com/736x/9d/6b/8b/9d6b8b8aebcf611c4a6c3218c5c0f3fd.jpg"},
+    {name: "Magnetic", autor: "ILLIT", image: "https://akamai.sscdn.co/letras/360x360/albuns/4/0/c/4/2281841720031967.jpg"},
+     { name: "LALALALA", autor: "Stray Kids", image: "https://i.pinimg.com/736x/87/34/2f/87342fd23a1dfabe439316f797b67d4d.jpg" },
+    { name: "Moonlight", autor: "TWICE", image: "https://i.pinimg.com/736x/32/4a/3c/324a3ce512f3745800af238944da7cb3.jpg" }
+];
+
 
 export default function Home({navigation}){
 
     return( /* Estilização própria para o scrollview */
-        <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.container}>
                 {/* ***** TÍTULOS ***** */}
                 <Text style={styles.Title}>HOME</Text>
                 <Text style={styles.subTitle}>💜O mundo do K-Pop reunido aqui💜</Text>
@@ -25,7 +28,7 @@ export default function Home({navigation}){
                     name={item.name}
                     autor={item.autor}
                 />)}/>
-        </ScrollView>
+        </View>
     )
 }
 
@@ -33,8 +36,7 @@ export default function Home({navigation}){
 const styles = StyleSheet.create({
     /* ***** VIEWs ***** */
     container: {
-        flexGrow: 1, //Faz o scrollview ocupar a tela toda
-        alignItems: 'center',
+        flex: 1,
     },
 
     /* ***** TEXTs ***** */
@@ -51,10 +53,9 @@ const styles = StyleSheet.create({
 
     subTitle: {
         color: '#846BB4',
-        justifyContent: 'center',
-        flexDirection: 'row',
         fontFamily: 'Arial',
         fontSize: 20,
         marginTop: 20,
+        textAlign:'center',
     },
 })
