@@ -1,7 +1,11 @@
-import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity, Button } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
 export default function Administrador({navigation}){
+
+    function register(){
+        
+    }
 
     return(
         <ScrollView>
@@ -22,7 +26,17 @@ export default function Administrador({navigation}){
                 </View>
 
                 <Text>Capa Álbum</Text>
-                <Text>Anexar arquivo de imagem</Text>
+                <Text>Anexar arquivo de imagem</Text> {/* tem como colocar uma imagem local? */}
+            </View>
+
+            <View>
+                <Button
+                title="Cadastar"
+                onPress={register}
+                />
+                <Button
+                title="Excluir"
+                />
             </View>
         </ScrollView>
     )
