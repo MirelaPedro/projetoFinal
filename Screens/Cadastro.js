@@ -1,10 +1,25 @@
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Image } from 'react-native';
 import { useState } from 'react';
 
+//importando do firebase
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../controller';
 
 export default function Cadastro({navigation}) {
-    const [senha, setSenha] = useState("");
+    const [password, setPasssword] = useState("");
     const [email, setEmail] = useState("");
+    const [error, setError] = useState("");
+
+    const signInUser = () => {
+      createUserWithEmailAndPassword(auth, email, password).then((userCredetial) => {
+        console.log("Sign In", userCredetial.user.email);
+        navigation.navigate("Login");
+      }).catch((erro) => {
+        console.log("Error: ", erro.message);
+        setError(erro.message);
+      })
+    }
+
 
   return (
     <View style={styles.container}>
@@ -17,15 +32,16 @@ export default function Cadastro({navigation}) {
 
       {/* ***** CAMPOS ***** */}
       <View style={styles.usuario}>
-        <TextInput style={styles.input} placeholder='Digite seu e-mail' value={email} onChangeText={setEmail}/>
+        <TextInput style={styles.input} placeholder='E-mail' value={email} onChangeText={setEmail}/>
       </View>
       <View style={styles.usuario}>
-        <TextInput style={styles.input} placeholder='Crie sua senha' value={senha} onChangeText={setSenha} secureTextEntry={true}/>
+        <TextInput style={styles.input} placeholder='Create Password' value={password} onChangeText={setPasssword} secureTextEntry={true}/>
       </View>
 
       {/* ***** BOTÃO ***** */}
       <View style={styles.btn}>
-        <Button title= "CADASTRAR" color='#DCCAFF'/>
+        <Button title= "CADASTRAR" color='#DCCAFF'
+        onPress={signInUser}/>
         <TouchableOpacity
         onPress={() => navigation.navigate('Login')}>
             <Text style={styles.txt}>Já tem uma conta? Clique aqui</Text>
