@@ -10,6 +10,7 @@ const music = [
     { name: "Moonlight", autor: "TWICE", image: "https://i.pinimg.com/736x/32/4a/3c/324a3ce512f3745800af238944da7cb3.jpg" }
 ];
 
+
 export default function Home({navigation}){
 
     return( /* Estilização própria para o scrollview */
