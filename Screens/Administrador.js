@@ -1,28 +1,41 @@
+import { useState } from "react";
 import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity, Button } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
-export default function Administrador({navigation}){
 
-    function register(){
-        
+//Imports do firebase
+import { db } from "../controller";
+import { collection, addDoc } from "firebase/firestore";
+
+export default function Administrador({navigation}){
+    const [name, setName] = useState();
+    const [album, setAlbum] = useState();
+    const [artist, setArtist] = useState();
+    const [durationTime, setDurationTima] = useState();
+    const [lyrics, setLyrics] = useState();
+
+    const register = async () => {
+        try{
+           
+        }
     }
 
     return(
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.title}>Cadastro de Música</Text>
+                <Text style={styles.title}>Register Song</Text>
 
                 <View>
                     <TextInput
                     placeholder="Name"/>
                     <TextInput
-                    placeholder="Álbum"/>
+                    placeholder="Album"/>
                     <TextInput
-                    placeholder="Artista"/>
+                    placeholder="Artist"/>
                     <TextInput
-                    placeholder="Tempo de duração"/>
+                    placeholder="Duration time"/>
                     <TextInput
-                    placeholder="Letra"/>
+                    placeholder="Lyrics"/>
                 </View>
 
                 <Text>Capa Álbum</Text>
