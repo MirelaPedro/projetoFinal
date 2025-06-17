@@ -15,9 +15,9 @@ export default function Administrador({navigation}){
     const [lyrics, setLyrics] = useState();
 
     const register = async () => {
-        try{
+        /* try{
            
-        }
+        } */
     }
 
     return(
