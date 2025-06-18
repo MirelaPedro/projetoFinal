@@ -1,10 +1,22 @@
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Image } from 'react-native';
 import { useState } from 'react';
 
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../controller';
 
 export default function Login({navigation}) {
-    const [senha, setSenha] = useState("");
-    const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [email, setEmail] = useState("");
+
+  const verifyUser = () => {
+    signInWithEmailAndPassword(auth, email, senha).then(userCredential => {
+      console.log('usuário logado', userCredential.user.email);
+      navigation.navigate('HomeDrawer');
+    })
+    .catch((error) => {
+      console.log('erro ao logar', error.message)
+    });
+  }
 
   return (
     <View style={styles.container}>
@@ -28,7 +40,7 @@ export default function Login({navigation}) {
       </View>
 
       <View style={styles.btn}>
-        <Button title= "ENTRAR" color='#DCCAFF' onPress={() => navigation.navigate("HomeDrawer")}/>
+        <Button title= "ENTRAR" color='#DCCAFF' onPress={verifyUser}/>
         <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
             <Text style={styles.txt}>Não tem uma conta? Clique aqui</Text>
         </TouchableOpacity>
