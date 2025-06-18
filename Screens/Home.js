@@ -20,6 +20,7 @@ export default function Home({navigation}){
                 <Text style={styles.subTitle}>💜O mundo do K-Pop reunido aqui💜</Text>
 
                 {/* ***** MÚSICAS ***** */}
+                <View style={styles.flatlist}>
                 <FlatList
                 data={music}
                 renderItem={({item}) => (
@@ -28,6 +29,7 @@ export default function Home({navigation}){
                     name={item.name}
                     autor={item.autor}
                 />)}/>
+                </View>
         </View>
     )
 }
@@ -37,6 +39,14 @@ const styles = StyleSheet.create({
     /* ***** VIEWs ***** */
     container: {
         flex: 1,
+        backgroundColor: '#FFFFFF',
+    },
+
+    flatlist: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between'
     },
 
     /* ***** TEXTs ***** */

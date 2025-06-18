@@ -5,11 +5,16 @@ export default function Card({image, name, autor}){
     return(
         <View style={styles.container}>         
             <View style={styles.info}>
+                <Image style={styles.image} source={{ uri: image }} />
                 <View style={styles.descripition}>
-                    <Image style={styles.image} source={{ uri: image }} />
                     <Text style={styles.name}>{name}</Text>
                     <Text style={styles.singer}>{autor}</Text>
                 </View>
+                <View style={styles.icon}>
+                    <TouchableOpacity>
+                        <Image style={styles.heart} source={require ('../assets/purple-heart.png')}/>
+                    </TouchableOpacity>
+            </View>
             </View>
         </View>
     )
@@ -19,35 +24,42 @@ const styles = StyleSheet.create({
 
     /* VIEWs */
     container:{
-        flexDirection: 'row',
-        flexWrap: 'wrap',
         justifyContent: 'center',
+        flexDirection: 'row',
     },
 
     info: {
         marginTop: 10,
-        flexDirection: 'row',
-        backgroundColor: '#ffffff',
-        width: 150,
-        height: 190,
+        backgroundColor: '#F2EBFF',
+        width: 350,
+        height: 145,
         borderRadius: 10,
-        justifyContent: 'center',
         alignItems: 'center',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        padding: 10,
     },
 
     descripition: {
         flexDirection: 'column',
     },
 
+    icon: {
+        justifyContent: 'center',
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        marginLeft: 'auto'
+    },
+
     /* TEXTs */
     name: {
-        fontSize: 20,
+        fontSize: 25,
         color: '#846BB4',
         fontWeight: 'bold'
     },
     
     singer: {
-        fontSize: 18,
+        fontSize: 23,
         color: '#846BB4'
     },
 
@@ -57,6 +69,16 @@ const styles = StyleSheet.create({
         width: 120,
         height: 120,
         borderRadius: 10,
+        margin: 20,
+    },
+
+    
+    heart: {
+        width: 25,
+        height: 25,
+        borderRadius: 10,
+        margin: 20,
     }
+
 
 })
