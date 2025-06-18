@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     info: {
         marginTop: 10,
         flexDirection: 'row',
-        backgroundColor: '#ffffff',
-        width: 150,
+        backgroundColor: '#F2EBFF',
+        width: 350,
         height: 190,
         borderRadius: 10,
         justifyContent: 'center',
