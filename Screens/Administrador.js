@@ -5,19 +5,37 @@ import { TextInput } from "react-native-gesture-handler";
 
 //Imports do firebase
 import { db } from "../controller";
-import { collection, addDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 
 export default function Administrador({navigation}){
-    const [name, setName] = useState();
-    const [album, setAlbum] = useState();
-    const [artist, setArtist] = useState();
-    const [durationTime, setDurationTima] = useState();
-    const [lyrics, setLyrics] = useState();
+    const [name, setName] = useState("");
+    const [album, setAlbum] = useState("");
+    const [artist, setArtist] = useState("");
+    const [durationTime, setDurationTime] = useState("");
+    const [lyrics, setLyrics] = useState("");
+    const [image, setImage] = useState("");
 
     const register = async () => {
-        /* try{
-           
-        } */
+        try{
+           await addDoc(collection(db, 'songs'), {
+                name,
+                album,
+                artist,
+                durationTime,
+                lyrics,
+                image
+           });
+
+           setName("");
+           setAlbum("");
+           setArtist("");
+           setDurationTime("");
+           setLyrics("");
+           setImage("");
+
+        } catch(error){
+            console.log("Erro ao cadastrar: ", error.message);
+        }
     }
 
     return(
@@ -27,19 +45,40 @@ export default function Administrador({navigation}){
 
                 <View>
                     <TextInput
-                    placeholder="Name"/>
+                    placeholder="Name"
+                    value={name}
+                    onChangeText={setName}
+                    />
+                    
                     <TextInput
-                    placeholder="Album"/>
+                    placeholder="Album"
+                    value={album}
+                    onChangeText={setAlbum}
+                    />
+                    
                     <TextInput
-                    placeholder="Artist"/>
+                    placeholder="Artist"
+                    value={artist}
+                    onChangeText={setArtist}
+                    />
+                    
                     <TextInput
-                    placeholder="Duration time"/>
+                    placeholder="Duration time"
+                    value={durationTime}
+                    onChangeText={setDurationTime}
+                    />
+                    
                     <TextInput
-                    placeholder="Lyrics"/>
+                    placeholder="Lyrics"
+                    value={lyrics}
+                    onChangeText={setLyrics}
+                    />
                 </View>
 
-                <Text>Capa Álbum</Text>
-                <Text>Anexar arquivo de imagem</Text> {/* tem como colocar uma imagem local? */}
+                <TextInput
+                placeholder="Anexar link da image"
+                onChangeText={setImage}
+                value={image}/>
             </View>
 
             <View>
