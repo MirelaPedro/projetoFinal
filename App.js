@@ -11,7 +11,7 @@ import Cadastro from './Screens/Cadastro';
 import Home from './Screens/Home';
 import Playlist from './Screens/playlist';
 import Musica from './Screens/musica';
-import Administrador from './Screens/administrador';
+import Administrador from './Screens/Administrador';
 
 /* ***** Imposts de Icons ***** */
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
