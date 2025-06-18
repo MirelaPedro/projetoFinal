@@ -32,10 +32,20 @@ export default function Cadastro({navigation}) {
 
       {/* ***** CAMPOS ***** */}
       <View style={styles.usuario}>
-        <TextInput style={styles.input} placeholder='E-mail' value={email} onChangeText={setEmail}/>
+        <TextInput 
+        style={styles.input} 
+        placeholder='E-mail' 
+        value={email} 
+        onChangeText={setEmail}/>
       </View>
+      
       <View style={styles.usuario}>
-        <TextInput style={styles.input} placeholder='Create Password' value={password} onChangeText={setPasssword} secureTextEntry={true}/>
+        <TextInput 
+        style={styles.input} 
+        placeholder='Create Password' 
+        value={password} 
+        onChangeText={setPasssword} 
+        secureTextEntry={true}/>
       </View>
 
       {/* ***** BOTÃO ***** */}
