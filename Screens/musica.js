@@ -1,19 +1,23 @@
 import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import Card from "../Components/card";
+import { FlatList } from "react-native-web";
 
-export default function Música({navigation, album, image, name, autor, tempo, letra }){
+const music = [
+    {name: "TT", autor: "TWICE", image: source="https://i.pinimg.com/736x/9d/6b/8b/9d6b8b8aebcf611c4a6c3218c5c0f3fd.jpg"},
+];
+
+export default function Música({navigation}){
 
     return(
-        <ScrollView>
-            <View style={styles.container}>
-                <Text style={styles.title}>{album}</Text>
-                <Image source={{image}}/>
-                <Text>{name}</Text>
-                <Text>{autor}</Text>
-                <Text>{tempo}</Text>
-                <Text>Letra: </Text>
-                <Text>{letra}</Text>
-            </View>
-        </ScrollView>
+        <FlatList
+        data={music}
+        renderItem={({item}) => (
+        <Card
+            image={item.image}
+            name={item.name}
+            duration={item.duration}
+            lyrics={item.lyrics}
+        />)}/>
     )
 }
 
