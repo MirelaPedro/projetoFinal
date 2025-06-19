@@ -1,5 +1,11 @@
 import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity, FlatList } from "react-native";
+import { useEffect, useState } from "react";
+
 import Card from "../Components/card";
+
+//Imports do firebase
+import { db } from "../controller";
+import { collection, getDoc } from "firebase/firestore";
 
 
 /* ************************* PLAYLIST PARA TEST */
@@ -13,6 +19,28 @@ const music = [
 
 export default function Home({navigation}){
 
+    const [songs, setSongs] = useState([]);
+
+    useEffect(() => {
+        async function loadSongs() {
+            try {
+                const querySnapshot = await getDoc(collection(db, "songs"));
+                const list = [];
+
+                querySnapshot.forEach((doc) => {
+                    list.push({id: doc.id, ...doc.data()});
+                });
+
+                setSongs(list);
+
+            } catch (error) {
+                console.log("Erro ao carregar: ", error.message);
+            }
+        }
+
+        loadSongs();
+    }, []);
+
     return( /* Estilização própria para o scrollview */
         <View style={styles.container}>
                 {/* ***** TÍTULOS ***** */}
@@ -22,7 +50,7 @@ export default function Home({navigation}){
                 {/* ***** MÚSICAS ***** */}
                 <View style={styles.flatlist}>
                 <FlatList
-                data={music}
+                data={songs}
                 renderItem={({item}) => (
                     <Card
                     image={item.image}
