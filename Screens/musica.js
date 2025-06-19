@@ -27,9 +27,4 @@ const styles = StyleSheet.create({
     container: {
         flex: 1
     },
-
-    /* ***** TEXTs ***** */
-    title: {
-        fontSize: 32
-    },
 })
