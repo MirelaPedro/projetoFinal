@@ -20,6 +20,17 @@ export default function Card({image, name, autor}){
     )
 }
 
+export function CardMusica({image, name, duration, lyrics}){
+    return(
+        <View style={styles.containerMusica}>   
+            <Image style={styles.image} source={{ uri: image }} />
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.duration}>{duration}</Text>
+            <Text style={styles.lyrics}>{lyrics}</Text>
+        </View>
+    )
+}
+
 const styles = StyleSheet.create({
 
     /* VIEWs */
