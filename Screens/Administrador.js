@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, StyleSheet, Text, Image, TouchableOpacity, Button } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity, Button, ScrollView } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
 
@@ -39,6 +39,7 @@ export default function Administrador({navigation}){
     }
 
     return(
+        <ScrollView>
             <View style={styles.container}>
                 {/* ***** TÍTULOS ***** */}
                 <Text style={styles.Title}>REGISTER SONG's</Text>
@@ -93,6 +94,8 @@ export default function Administrador({navigation}){
                     />
                 </View>
             </View>
+            
+        </ScrollView>
     )
 }
 

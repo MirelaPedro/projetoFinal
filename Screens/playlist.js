@@ -1,13 +1,15 @@
 import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity, FlatList } from "react-native";
 import CardPlaylist from "../Components/cardplaylist";
 
+import { usePlaylist } from "../Components/providerPlaylist";
+
 const music = [
     {name: "TT", autor: "Twice", image: "https://i.scdn.co/image/ab67616d0000b273387444ab2fc1f08dfe7915ab"},
     {name: "Magnetic", autor: "ILLIT", image: "https://akamai.sscdn.co/letras/360x360/albuns/4/0/c/4/2281841720031967.jpg"}
 ];
 
 export default function Playlist({navigation}){
-
+    const playlist = usePlaylist();
     return(
         <ScrollView>
             <View style={styles.container}>
@@ -16,7 +18,7 @@ export default function Playlist({navigation}){
 
                 {/* ***** MÚSICAS ***** */}
                 <FlatList
-                data={music}
+                data={playlist}
                 renderItem={({item}) => (
                     <CardPlaylist
                     image={item.image}

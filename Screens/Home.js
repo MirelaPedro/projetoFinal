@@ -2,6 +2,7 @@ import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity, FlatList }
 import { useEffect, useState } from "react";
 
 import Card from "../Components/card";
+import { usePlaylist } from "../Components/providerPlaylist";
 
 //Imports do firebase
 import { db } from "../controller";
@@ -18,7 +19,7 @@ const music = [
 
 
 export default function Home({navigation}){
-
+    const {addMusic} = usePlaylist();
     const [songs, setSongs] = useState([]);
 
     useEffect(() => {
@@ -57,6 +58,9 @@ export default function Home({navigation}){
                     image={item.image}
                     name={item.name}
                     autor={item.autor}
+                    add={() => {
+                        addMusic(item);
+                    }}
                 />)}/>
                 </View>
         </View>
