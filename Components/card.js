@@ -1,7 +1,7 @@
 import { View, StyleSheet, Text, TouchableOpacity, Image } from "react-native";
 
 
-export default function Card({image, name, autor}){
+export default function Card({image, name, autor, add}){
     return(
         <View style={styles.container}>         
             <View style={styles.info}>
@@ -11,7 +11,8 @@ export default function Card({image, name, autor}){
                     <Text style={styles.singer}>{autor}</Text>
                 </View>
                 <View style={styles.icon}>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                    onPress={add}>
                         <Image style={styles.heart} source={require ('../assets/purple-heart.png')}/>
                     </TouchableOpacity>
             </View>
