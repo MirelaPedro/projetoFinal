@@ -41,8 +41,9 @@ export default function Home({navigation}){
         loadSongs();
     }, []);
 
-    return( /* Estilização própria para o scrollview */
-        <View style={styles.container}>
+    return( 
+        <ScrollView>
+            <View style={styles.container}>
                 {/* ***** TÍTULOS ***** */}
                 <Text style={styles.Title}>HOME</Text>
                 <Text style={styles.subTitle}>💜O mundo do K-Pop reunido aqui💜</Text>
@@ -59,6 +60,7 @@ export default function Home({navigation}){
                 />)}/>
                 </View>
         </View>
+        </ScrollView>
     )
 }
 

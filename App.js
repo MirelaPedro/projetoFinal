@@ -5,10 +5,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-/* ***** Imports de Telas ***** */
-import Login from './Screens/login';
+/* ***** Imports de Telas **** */
+import Login from './Screens/Login';
 import Cadastro from './Screens/Cadastro';
-import Home from './Screens/home';
+import Home from './Screens/Home';
 import Playlist from './Screens/playlist';
 import Musica from './Screens/musica';
 import Administrador from './Screens/Administrador';
