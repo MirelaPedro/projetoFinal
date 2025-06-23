@@ -5,7 +5,7 @@ import Card from "../Components/card";
 
 //Imports do firebase
 import { db } from "../controller";
-import { collection, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 
 /* ************************* PLAYLIST PARA TEST */
@@ -24,7 +24,7 @@ export default function Home({navigation}){
     useEffect(() => {
         async function loadSongs() {
             try {
-                const querySnapshot = await getDoc(collection(db, "songs"));
+                const querySnapshot = await getDocs(collection(db, "songs"));
                 const list = [];
 
                 querySnapshot.forEach((doc) => {
