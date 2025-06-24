@@ -48,7 +48,6 @@ export default function Home({navigation}){
                 {/* ***** TÍTULOS ***** */}
                 <Text style={styles.Title}>HOME</Text>
                 <Text style={styles.subTitle}>💜O mundo do K-Pop reunido aqui💜</Text>
-
                 {/* ***** MÚSICAS ***** */}
                 <View style={styles.flatlist}>
                     <FlatList
@@ -64,6 +63,7 @@ export default function Home({navigation}){
                         autor={item.artist}
                         add={() => {
                             addMusic(item);
+                            navigation.navigate('Playlist');
                         }}
                     />)}/>
                 </View>
