@@ -10,12 +10,12 @@ import { collection, getDocs } from "firebase/firestore";
 
 
 /* ************************* PLAYLIST PARA TEST */
-const music = [
+/* const music = [
     {name: "TT", autor: "TWICE", image: "https://i.pinimg.com/736x/9d/6b/8b/9d6b8b8aebcf611c4a6c3218c5c0f3fd.jpg"},
     {name: "Magnetic", autor: "ILLIT", image: "https://akamai.sscdn.co/letras/360x360/albuns/4/0/c/4/2281841720031967.jpg"},
      { name: "LALALALA", autor: "Stray Kids", image: "https://i.pinimg.com/736x/87/34/2f/87342fd23a1dfabe439316f797b67d4d.jpg" },
     { name: "Moonlight", autor: "TWICE", image: "https://i.pinimg.com/736x/32/4a/3c/324a3ce512f3745800af238944da7cb3.jpg" }
-];
+]; */
 
 
 export default function Home({navigation}){
