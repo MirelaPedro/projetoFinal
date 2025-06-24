@@ -9,7 +9,7 @@ const music = [
 ];
 
 export default function Playlist({navigation}){
-    const playlist = usePlaylist();
+    const {playlist} = usePlaylist();
     return(
         <ScrollView>
             <View style={styles.container}>

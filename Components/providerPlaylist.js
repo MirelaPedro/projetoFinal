@@ -7,9 +7,13 @@ export default function ProviderPlaylist({children}){
 
     const [playlist, setPlaylist] = useState([]); /* Array do carrinho */
 
-    /* Função para adicionar ao carrinho */
+    /* Função para adicionar a playlist*/
     function addMusic(music){
         setPlaylist((anterior) => [...anterior, music]);
+    }
+
+    function deleteMusic(music){
+        
     }
 
     return(
