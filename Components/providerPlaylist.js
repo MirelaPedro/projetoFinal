@@ -1,24 +1,25 @@
 import { createContext, useContext, useState } from "react";
 
+
 const PlaylistContext = createContext();
 
 export default function ProviderPlaylist({children}){
-    
-    const [playlist, setPlaylist] = useState([]);
 
+    const [playlist, setPlaylist] = useState([]); /* Array do carrinho */
+
+    /* Função para adicionar ao carrinho */
     function addMusic(music){
         setPlaylist((anterior) => [...anterior, music]);
-        console.log("Musica add");
     }
 
     return(
-        <playlistContext.Provider value={{playlist, addMusic}}>
+        <PlaylistContext.Provider value={{playlist, addMusic}}>
             {children}
-        </playlistContext.Provider>
+        </PlaylistContext.Provider>
     )
 }
+
 
 export function usePlaylist(){
     return useContext(PlaylistContext);
 }
-
