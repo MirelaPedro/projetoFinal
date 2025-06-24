@@ -1,13 +1,15 @@
 import { View, StyleSheet, Text, TouchableOpacity, Image } from "react-native";
 
 
-export default function Card({image, name, autor, add}){
+export default function Card({image, name, autor, add}, song){
     return(
         <View style={styles.container}>         
             <View style={styles.info}>
                 <Image style={styles.image} source={{ uri: image }} />
                 <View style={styles.descripition}>
-                    <Text style={styles.name}>{name}</Text>
+                    <TouchableOpacity onPress={song}>
+                        <Text style={styles.name}>{name}</Text>
+                    </TouchableOpacity>
                     <Text style={styles.singer}>{autor}</Text>
                 </View>
                 <View style={styles.icon}>
