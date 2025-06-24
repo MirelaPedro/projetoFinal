@@ -25,7 +25,7 @@ export default function Playlist({navigation}){
                     image={item.image}
                     name={item.name}
                     autor={item.artist}
-                    deleteMusic={() => deleteMusic(index)}
+                    deleteSong={() => deleteMusic(index)}
                 />)}/>
             </View>
         </ScrollView>

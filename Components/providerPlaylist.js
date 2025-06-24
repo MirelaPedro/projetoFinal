@@ -67,7 +67,7 @@ export default function ProviderPlaylist({children}){
 
     function deleteMusic(index){
         const newList = [];
-        setCarrinho((previousState) => {
+        setPlaylist((previousState) => {
             for (let i = 0; i < previousState.length; i++) {
                 if (i !== index){
                     newList.push(previousState[i]);

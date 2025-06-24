@@ -1,7 +1,7 @@
 import { StyleSheet, Button, View, Text, Image, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-export default function CardPlaylist({image, name, autor, deleteMusic}){
+export default function CardPlaylist({image, name, autor, deleteSong}){
     return(
         <View style={styles.card}>
         <Image 
@@ -14,7 +14,7 @@ export default function CardPlaylist({image, name, autor, deleteMusic}){
         </View>
         <View style={styles.icone}>
         <TouchableOpacity
-        onPress={deleteMusic}>
+        onPress={deleteSong}>
           <MaterialCommunityIcons name="minus-circle-outline" size={24} color="#535353" />
         </TouchableOpacity>
         
