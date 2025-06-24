@@ -6,10 +6,20 @@ import { onAuthStateChanged } from "firebase/auth";
 
 const PlaylistContext = createContext();
 
+/* Obs.: não sei se é para criar um novo contexto ou se tem como reututilizar esse, vou tentar o segundo */
+
 export default function ProviderPlaylist({children}){
+    /* Variáveis */
     const [userEmail, setUserEmail] = useState(null);
     const [loadingPlaylist, setLoadingPlaylist] = useState(true); 
     const [playlist, setPlaylist] = useState([]);
+
+    const [song, setSong] = useState({});
+
+    function songPage(music){
+        setSong(music);
+    }
+
 
     /* Função para adcionar a playlist ao firebase */
     useEffect(() => {
@@ -78,7 +88,7 @@ export default function ProviderPlaylist({children}){
     }
 
     return(
-        <PlaylistContext.Provider value={{playlist, addMusic, deleteMusic}}>
+        <PlaylistContext.Provider value={{playlist, addMusic, deleteMusic, songPage, song}}>
             {children}
         </PlaylistContext.Provider>
     )

@@ -32,6 +32,7 @@ export default function App() {
           <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
           <Stack.Screen name='Cadastro' component={Cadastro} options={{headerShown: false}}/>
           <Stack.Screen name='HomeDrawer' component={HomeDrawer} options={{headerShown: false}}/>
+          <Stack.Screen name='Music' component={Musica}/>
         </Stack.Navigator>
       </NavigationContainer>
     </ProviderPlaylist>

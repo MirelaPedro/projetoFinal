@@ -19,7 +19,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 
 export default function Home({navigation}){
-    const {addMusic} = usePlaylist();
+    const {addMusic, songPage} = usePlaylist();
     const [songs, setSongs] = useState([]);
 
     useEffect(() => {
@@ -51,17 +51,21 @@ export default function Home({navigation}){
 
                 {/* ***** MÚSICAS ***** */}
                 <View style={styles.flatlist}>
-                <FlatList
-                data={songs}
-                renderItem={({item}) => (
-                    <Card
-                    image={item.image}
-                    name={item.name}
-                    autor={item.artist}
-                    add={() => {
-                        addMusic(item);
-                    }}
-                />)}/>
+                    <FlatList
+                    data={songs}
+                    renderItem={({item}) => (
+                        <Card
+                        image={item.image}
+                        name={item.name}
+                        song={() => {
+                            songPage(item);
+                            navigation.navigate('Music');
+                        }}
+                        autor={item.artist}
+                        add={() => {
+                            addMusic(item);
+                        }}
+                    />)}/>
                 </View>
         </View>
         </ScrollView>
