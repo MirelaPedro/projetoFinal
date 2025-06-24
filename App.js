@@ -18,6 +18,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import ProviderPlaylist from './Components/providerPlaylist';
 
 
 export default function App() {
@@ -25,13 +26,15 @@ export default function App() {
   const Stack = createStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
-        <Stack.Screen name='Cadastro' component={Cadastro} options={{headerShown: false}}/>
-        <Stack.Screen name='HomeDrawer' component={HomeDrawer} options={{headerShown: false}}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ProviderPlaylist>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
+          <Stack.Screen name='Cadastro' component={Cadastro} options={{headerShown: false}}/>
+          <Stack.Screen name='HomeDrawer' component={HomeDrawer} options={{headerShown: false}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ProviderPlaylist>
   );
 }
 
