@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity, Button } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity, Button, ScrollView } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
 
@@ -41,55 +41,60 @@ export default function Administrador({navigation}){
     return(
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.title}>Register Song</Text>
+                {/* ***** TÍTULOS ***** */}
+                <Text style={styles.Title}>REGISTER SONG's</Text>
+                <Text style={styles.subTitle}>💜Faça o cadastro das suas músicas💜</Text>
 
-                <View>
-                    <TextInput
+                <View style={styles.adm}>
+                    <TextInput style={styles.input}
                     placeholder="Name"
                     value={name}
                     onChangeText={setName}
                     />
                     
-                    <TextInput
+                    <TextInput style={styles.input}
                     placeholder="Album"
                     value={album}
                     onChangeText={setAlbum}
                     />
                     
-                    <TextInput
+                    <TextInput style={styles.input}
                     placeholder="Artist"
                     value={artist}
                     onChangeText={setArtist}
                     />
                     
-                    <TextInput
+                    <TextInput style={styles.input}
                     placeholder="Duration time"
                     value={durationTime}
                     onChangeText={setDurationTime}
                     />
                     
-                    <TextInput
+                    <TextInput style={styles.input}
                     placeholder="Lyrics"
                     value={lyrics}
                     onChangeText={setLyrics}
                     />
+
+                    <TextInput style={styles.input}
+                    placeholder="Anexar link da image"
+                    onChangeText={setImage}
+                    value={image}/>
                 </View>
-
-                <TextInput
-                placeholder="Anexar link da image"
-                onChangeText={setImage}
-                value={image}/>
+                <View style={styles.btn}>
+                    <Button
+                    title="Cadastar"
+                    onPress={register} color='#DCCAFF'
+                    />
+                    <View style={styles.vazio}>
+                        ......................
+                    </View>
+                    <Button
+                    title="Excluir" color='#DCCAFF'
+                    />
+                </View>
             </View>
-
-            <View>
-                <Button
-                title="Cadastar"
-                onPress={register}
-                />
-                <Button
-                title="Excluir"
-                />
-            </View>
+            
         </ScrollView>
     )
 }
@@ -98,11 +103,60 @@ export default function Administrador({navigation}){
 const styles = StyleSheet.create({
     /* ***** VIEWs ***** */
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#FFFFFF',
     },
 
     /* ***** TEXTs ***** */
-    title: {
-        fontSize: 32
+    Title: {
+      color: '#846BB4',
+      justifyContent: 'center',
+      flexDirection: 'row',
+      textAlign:'center',
+      fontFamily: 'Arial',
+      fontSize: 30,
+      fontWeight: 'bold',
+      marginTop: 20,
+    },
+
+    subTitle: {
+        color: '#846BB4',
+        fontFamily: 'Arial',
+        fontSize: 20,
+        marginTop: 20,
+        textAlign:'center',
+    },
+
+    /* ***** BUTTONs ***** */
+    btn: {
+        justifyContent: 'center',
+        margin: 30
+    },
+
+    /* ***** INPUTs ***** */
+    adm: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    input: {
+        height: 10,
+        margin: 12,
+        borderWidth: 1,
+        borderColor: '#888888',
+        borderRadius: 10,
+        padding: 10,
+        width: 350,
+        height: 50,
+        fontSize: 30,
+        color:'#818181',
+        fontFamily: 'Arial',
+        fontSize: 15,
+    },
+
+    /* ***** ADICIONAIS ***** */
+    vazio: {
+        flex: 1,
+        color: '#FFFFFF',
     },
 })

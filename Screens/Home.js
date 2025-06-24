@@ -2,29 +2,30 @@ import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity, FlatList }
 import { useEffect, useState } from "react";
 
 import Card from "../Components/card";
+import { usePlaylist } from "../Components/providerPlaylist";
 
 //Imports do firebase
 import { db } from "../controller";
-import { collection, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 
 /* ************************* PLAYLIST PARA TEST */
-const music = [
-    {name: "TT", autor: "TWICE", image: source="https://i.pinimg.com/736x/9d/6b/8b/9d6b8b8aebcf611c4a6c3218c5c0f3fd.jpg"},
+/* const music = [
+    {name: "TT", autor: "TWICE", image: "https://i.pinimg.com/736x/9d/6b/8b/9d6b8b8aebcf611c4a6c3218c5c0f3fd.jpg"},
     {name: "Magnetic", autor: "ILLIT", image: "https://akamai.sscdn.co/letras/360x360/albuns/4/0/c/4/2281841720031967.jpg"},
      { name: "LALALALA", autor: "Stray Kids", image: "https://i.pinimg.com/736x/87/34/2f/87342fd23a1dfabe439316f797b67d4d.jpg" },
     { name: "Moonlight", autor: "TWICE", image: "https://i.pinimg.com/736x/32/4a/3c/324a3ce512f3745800af238944da7cb3.jpg" }
-];
+]; */
 
 
 export default function Home({navigation}){
-
+    const {addMusic} = usePlaylist();
     const [songs, setSongs] = useState([]);
 
     useEffect(() => {
         async function loadSongs() {
             try {
-                const querySnapshot = await getDoc(collection(db, "songs"));
+                const querySnapshot = await getDocs(collection(db, "songs"));
                 const list = [];
 
                 querySnapshot.forEach((doc) => {
@@ -41,8 +42,9 @@ export default function Home({navigation}){
         loadSongs();
     }, []);
 
-    return( /* Estilização própria para o scrollview */
-        <View style={styles.container}>
+    return( 
+        <ScrollView>
+            <View style={styles.container}>
                 {/* ***** TÍTULOS ***** */}
                 <Text style={styles.Title}>HOME</Text>
                 <Text style={styles.subTitle}>💜O mundo do K-Pop reunido aqui💜</Text>
@@ -56,9 +58,13 @@ export default function Home({navigation}){
                     image={item.image}
                     name={item.name}
                     autor={item.autor}
+                    add={() => {
+                        addMusic(item);
+                    }}
                 />)}/>
                 </View>
         </View>
+        </ScrollView>
     )
 }
 
