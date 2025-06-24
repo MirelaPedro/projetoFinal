@@ -57,7 +57,7 @@ export default function Home({navigation}){
                     <Card
                     image={item.image}
                     name={item.name}
-                    autor={item.autor}
+                    autor={item.artist}
                     add={() => {
                         addMusic(item);
                     }}

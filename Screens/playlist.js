@@ -9,7 +9,8 @@ const music = [
 ];
 
 export default function Playlist({navigation}){
-    const {playlist} = usePlaylist();
+    const {playlist, deleteMusic} = usePlaylist();
+
     return(
         <ScrollView>
             <View style={styles.container}>
@@ -19,11 +20,12 @@ export default function Playlist({navigation}){
                 {/* ***** MÚSICAS ***** */}
                 <FlatList
                 data={playlist}
-                renderItem={({item}) => (
+                renderItem={({item, index}) => (
                     <CardPlaylist
                     image={item.image}
                     name={item.name}
-                    autor={item.autor}
+                    autor={item.artist}
+                    deleteMusic={() => deleteMusic(index)}
                 />)}/>
             </View>
         </ScrollView>
