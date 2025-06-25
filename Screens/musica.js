@@ -1,34 +1,27 @@
-import { View, StyleSheet, Text, FlatList } from "react-native";
+
+import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { CardMusica } from "../Components/card";
+import { FlatList } from "react-native-web";
+
 import { usePlaylist } from "../Components/providerPlaylist";
-import CardMusica from "../Components/cardmusica";
 
-export default function Musica() {
-  const { playlist } = usePlaylist();
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>LETTER's</Text>
+export default function Música({navigation}){
 
-      <FlatList
-        data={playlist}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <CardMusica
-            image={item.image}
-            name={item.name}
-            autor={item.artist}
-            album={item.album}
-            durationTime={item.durationTime}
-          />
-        )}
-        contentContainerStyle={styles.list}
-        showsVerticalScrollIndicator={false}
-      />
-    </View>
-  );
+    const {song} = usePlaylist();
+
+    return(
+        <CardMusica
+            image={song.image}
+            name={song.name}
+            duration={song.duration}
+            lyrics={song.lyrics}
+        />
+    )
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: "#fff",
