@@ -11,10 +11,14 @@ export default function Login({navigation}) {
   const verifyUser = () => {
     signInWithEmailAndPassword(auth, email, senha).then(userCredential => {
       console.log('usuário logado', userCredential.user.email);
-      navigation.navigate('HomeDrawer');
+      if(email == 'mirela@gmail.com'){
+        navigation.navigate('Administrador');
+      } else{
+        navigation.navigate('HomeDrawer');
+      }
     })
     .catch((error) => {
-      console.log('erro ao logar', error.message)
+      console.log('erro ao logar', error.message);
     });
   }
 

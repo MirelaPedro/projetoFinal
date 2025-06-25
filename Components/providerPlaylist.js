@@ -14,7 +14,7 @@ export default function ProviderPlaylist({children}){
     const [loadingPlaylist, setLoadingPlaylist] = useState(true); 
     const [playlist, setPlaylist] = useState([]);
 
-    const [song, setSong] = useState({});
+    const [song, setSong] = useState([]);
 
     function songPage(music){
         setSong(music);

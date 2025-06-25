@@ -6,7 +6,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
 /* ***** Imports de Telas **** */
-import Login from './Screens/Login';
+import Login from './Screens/login';
 import Cadastro from './Screens/Cadastro';
 import Home from './Screens/Home';
 import Playlist from './Screens/playlist';
@@ -33,6 +33,7 @@ export default function App() {
           <Stack.Screen name='Cadastro' component={Cadastro} options={{headerShown: false}}/>
           <Stack.Screen name='HomeDrawer' component={HomeDrawer} options={{headerShown: false}}/>
           <Stack.Screen name='Music' component={Musica}/>
+          <Stack.Screen name='Administrador' component={Administrador} options={{headerShown: false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     </ProviderPlaylist>
@@ -60,11 +61,6 @@ function HomeDrawer(){
       <Drawer.Screen name='Música' component={Musica}
       /* options={{ tabBarIcon: () => (
       <Ionicons name="musical-note-outline" size={24} color="black" />)}} *//>
-
-      {/* ADMINISTRADOR */}
-      <Drawer.Screen name='Administrador' component={Administrador}
-      /* options={{ tabBarIcon: () => (
-      <FontAwesome5 name="user-cog" size={24} color="black" />)}} *//>
 
     </Drawer.Navigator>
   )
