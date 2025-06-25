@@ -2,6 +2,7 @@ import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity, FlatList }
 import CardPlaylist from "../Components/cardplaylist";
 
 import { usePlaylist } from "../Components/providerPlaylist";
+import { StretchInX } from "react-native-reanimated";
 
 const music = [
     {name: "TT", autor: "Twice", image: "https://i.scdn.co/image/ab67616d0000b273387444ab2fc1f08dfe7915ab"},
@@ -12,8 +13,7 @@ export default function Playlist({navigation}){
     const {playlist, deleteMusic, songPage} = usePlaylist();
 
     return(
-        <ScrollView>
-            <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}> {/*  Estilização própria para ScrollView */}
                 {/* ***** TÍTULOS ***** */}
                 <Text style={styles.title}>Sua Playlist</Text>
 
@@ -27,7 +27,6 @@ export default function Playlist({navigation}){
                     autor={item.artist}
                     deleteSong={() => deleteMusic(index)}
                 />)}/>
-            </View>
         </ScrollView>
     )
 }
@@ -37,6 +36,7 @@ export default function Playlist({navigation}){
 const styles = StyleSheet.create({
     /* ***** VIEWs ***** */
     container: {
+        backgroundColor: '#FFFFFF',
         flex: 1,
         justifyContent:'center',
         alignItems:'center'

@@ -17,7 +17,6 @@ export default function CardPlaylist({image, name, autor, deleteSong}){
         onPress={deleteSong}>
           <MaterialCommunityIcons name="minus-circle-outline" size={24} color="#535353" />
         </TouchableOpacity>
-        
         </View>
         </View>
     )

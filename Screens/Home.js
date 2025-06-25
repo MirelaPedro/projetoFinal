@@ -43,13 +43,12 @@ export default function Home({navigation}){
     }, []);
 
     return( 
-        <ScrollView>
+        <ScrollView >
             <View style={styles.container}>
                 {/* ***** TÍTULOS ***** */}
                 <Text style={styles.Title}>HOME</Text>
                 <Text style={styles.subTitle}>💜O mundo do K-Pop reunido aqui💜</Text>
                 {/* ***** MÚSICAS ***** */}
-                <View style={styles.flatlist}>
                     <FlatList
                     data={songs}
                     renderItem={({item}) => (
@@ -67,7 +66,6 @@ export default function Home({navigation}){
                         }}
                     />)}/>
                 </View>
-        </View>
         </ScrollView>
     )
 }
@@ -78,25 +76,20 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFFFFF',
-    },
-
-    flatlist: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between'
+        justifyContent:'center',
+        alignItems:'center'
     },
 
     /* ***** TEXTs ***** */
     Title: {
-      color: '#846BB4',
-      justifyContent: 'center',
-      flexDirection: 'row',
-      textAlign:'center',
-      fontFamily: 'Arial',
-      fontSize: 30,
-      fontWeight: 'bold',
-      marginTop: 20,
+        color: '#846BB4',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        textAlign:'center',
+        fontFamily: 'Arial',
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginTop: 26,
     },
 
     subTitle: {
