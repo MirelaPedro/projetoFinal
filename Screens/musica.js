@@ -1,3 +1,4 @@
+
 import { ScrollView, View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import { CardMusica } from "../Components/card";
 import { FlatList } from "react-native-web";
@@ -19,10 +20,24 @@ export default function Música({navigation}){
     )
 }
 
-
 const styles = StyleSheet.create({
-    /* ***** VIEWs ***** */
-    container: {
-        flex: 1
-    },
-})
+
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    paddingTop: 30,
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "#846BB4",
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  list: {
+    paddingBottom: 40,
+    alignItems: "center", // centraliza os cards
+  },
+});
+
+

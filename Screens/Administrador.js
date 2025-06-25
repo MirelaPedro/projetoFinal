@@ -39,8 +39,7 @@ export default function Administrador({navigation}){
     }
 
     return(
-        <ScrollView>
-            <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}> {/*  Estilização própria para ScrollView */}
                 {/* ***** TÍTULOS ***** */}
                 <Text style={styles.Title}>REGISTER SONG's</Text>
                 <Text style={styles.subTitle}>💜Faça o cadastro das suas músicas💜</Text>
@@ -83,18 +82,10 @@ export default function Administrador({navigation}){
                 </View>
                 <View style={styles.btn}>
                     <Button
-                    title="Cadastar"
+                    title="Cadastrar"
                     onPress={register} color='#DCCAFF'
                     />
-                    <View style={styles.vazio}>
-                        ......................
-                    </View>
-                    <Button
-                    title="Excluir" color='#DCCAFF'
-                    />
                 </View>
-            </View>
-            
         </ScrollView>
     )
 }
@@ -109,14 +100,14 @@ const styles = StyleSheet.create({
 
     /* ***** TEXTs ***** */
     Title: {
-      color: '#846BB4',
-      justifyContent: 'center',
-      flexDirection: 'row',
-      textAlign:'center',
-      fontFamily: 'Arial',
-      fontSize: 30,
-      fontWeight: 'bold',
-      marginTop: 20,
+        color: '#846BB4',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        textAlign:'center',
+        fontFamily: 'Arial',
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginTop: 26,
     },
 
     subTitle: {
@@ -143,7 +134,6 @@ const styles = StyleSheet.create({
         height: 10,
         margin: 12,
         borderWidth: 1,
-        borderColor: '#888888',
         borderRadius: 10,
         padding: 10,
         width: 350,
@@ -152,6 +142,12 @@ const styles = StyleSheet.create({
         color:'#818181',
         fontFamily: 'Arial',
         fontSize: 15,
+        borderColor:'#b9b9b9',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+        elevation: 3,
     },
 
     /* ***** ADICIONAIS ***** */
